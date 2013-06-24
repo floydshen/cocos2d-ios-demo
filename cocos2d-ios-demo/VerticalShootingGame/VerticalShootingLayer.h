@@ -14,6 +14,8 @@
 {
     CCArray *_enemySprites;
     CGPoint _playerVelocity;
+    BOOL _isTouchToShoot;
+    CCSprite *_bulletSprite;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

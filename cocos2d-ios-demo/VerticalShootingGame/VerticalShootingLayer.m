@@ -23,6 +23,8 @@ enum {
 - (void) spawnEnemy;
 - (CCSprite *) getAvailableEnemySprite;
 - (void) updatePlayerPosition: (ccTime)dt;
+- (void) updatePlayerShooting: (ccTime)dt;
+- (void) bulletFinishedMoving: (id)sender;
 @end
 
 // HelloWorldLayer implementation
@@ -79,10 +81,49 @@ enum {
         
         [self scheduleUpdate]; //游戏的主循环
         
+        self.isTouchEnabled = YES;
+        _isTouchToShoot = NO;
         
+        _bulletSprite = [CCSprite spriteWithFile:@"bullet1.png"];
+        _bulletSprite.visible  = NO;
+        [self addChild:_bulletSprite z:4];
         
 	}
 	return self;
+}
+
+//- (void) ccTouchCancelled:(UITouch *)touch withEvent:(UIEvent *)event {
+//    _isTouchToShoot = YES;
+//}
+
+- (void) ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    CCLOG(@"touch");
+    _isTouchToShoot = YES;
+}
+
+- (void) updatePlayerShooting:(ccTime)dt {
+    if (_bulletSprite.visible || !_isTouchToShoot) {
+        return;
+    }
+    
+    CCSprite *playerSprite = (CCSprite *)[self getChildByTag:kTagPlayer];
+    CGPoint pos = playerSprite.position;
+    
+    CGPoint bulletPos = CGPointMake(pos.x, pos.y + playerSprite.contentSize.height/2 + _bulletSprite.contentSize.height);
+    _bulletSprite.position = bulletPos;
+    _bulletSprite.visible = YES;
+    
+    
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    id moveby = [CCMoveBy actionWithDuration:1.0 position:ccp(0, winSize.height-bulletPos.y)];
+    id callback = [CCCallFuncN actionWithTarget:self selector:@selector(bulletFinishedMoving:)];
+    id ac = [CCSequence actions:moveby, callback, nil];
+    [_bulletSprite runAction:ac];
+    
+}
+
+- (void) bulletFinishedMoving:(id)sender {
+    _bulletSprite.visible = NO;
 }
 
 - (void) updatePlayerPosition:(ccTime)dt {
@@ -123,6 +164,7 @@ enum {
 
 - (void) update: (ccTime)dt {
     [self updatePlayerPosition:dt];
+    [self updatePlayerShooting:dt];
 }
 
 - (void) spawnEnemy {
@@ -137,14 +179,14 @@ enum {
         CCSprite *sp = (CCSprite *) sender;
         sp.visible = NO;
         sp.position = ccp(0, winSize.height + sp.contentSize.height + 10);
-        CCLOG(@"reset enemy plane!");
+//        CCLOG(@"reset enemy plane!");
     }];
     
     id action = [CCSequence actions:moveBy, callback, nil];
     
     enemySprite.visible = YES;
     enemySprite.position = ccp(arc4random() % (int) (winSize.width - enemySprite.contentSize.width) + enemySprite.contentSize.width/2, enemySprite.position.y);
-    CCLOG(@"----------------------");
+//    CCLOG(@"----------------------");
     [enemySprite runAction:action];
     [self performSelector:_cmd withObject:nil afterDelay:arc4random() % 3 + 1];
     
