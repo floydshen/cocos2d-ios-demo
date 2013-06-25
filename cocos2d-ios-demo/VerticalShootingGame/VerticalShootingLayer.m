@@ -92,6 +92,40 @@ enum {
 	return self;
 }
 
+- (CGRect) rectOfSprite: (CCSprite *) sprite {
+    return CGRectMake(sprite.position.x - sprite.contentSize.width/2, sprite.position.y - sprite.contentSize.height/2, sprite.contentSize.width, sprite.contentSize.height);
+}
+
+- (void) collisionDetection: (ccTime) dt {
+    CCSprite *enemy;
+    CGRect bulletRect = [self rectOfSprite:_bulletSprite];
+    CCARRAY_FOREACH(_enemySprites, enemy) {
+        if (enemy.visible) {
+            CGRect enemyRect = [self rectOfSprite:enemy];
+            if (_bulletSprite.visible && CGRectIntersectsRect(enemyRect, bulletRect)) {
+                enemy.visible = NO;
+                _bulletSprite.visible = NO;
+                [_bulletSprite stopAllActions];
+                [enemy stopAllActions];
+                break;
+            }
+            
+            
+            CCSprite *playerSprite = (CCSprite *)[self getChildByTag:kTagPlayer];
+            CGRect playRect = [self rectOfSprite:playerSprite];
+            if (playerSprite.visible && playerSprite.numberOfRunningActions == 0 && CGRectIntersectsRect(enemyRect, playRect)) {
+                enemy.visible = NO;
+                id blink = [CCBlink actionWithDuration:2.0 blinks:4];
+                [playerSprite stopAllActions];
+                [playerSprite runAction:blink];
+                break;
+            }
+            
+        }
+    }
+    
+}
+
 //- (void) ccTouchCancelled:(UITouch *)touch withEvent:(UIEvent *)event {
 //    _isTouchToShoot = YES;
 //}
@@ -165,6 +199,7 @@ enum {
 - (void) update: (ccTime)dt {
     [self updatePlayerPosition:dt];
     [self updatePlayerShooting:dt];
+    [self collisionDetection:dt];
 }
 
 - (void) spawnEnemy {
