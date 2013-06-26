@@ -12,6 +12,7 @@
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
+#import "SimpleAudioEngine.h"
 
 #pragma mark - VerticalShootingLayer
 
@@ -88,7 +89,12 @@ enum {
         _bulletSprite.visible  = NO;
         [self addChild:_bulletSprite z:4];
         
+        [[SimpleAudioEngine sharedEngine] preloadEffect:@"bullet.mp3"];
+        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"game_music.mp3" loop:YES];
+        [[SimpleAudioEngine sharedEngine] setBackgroundMusicVolume:0.5];
+
 	}
+    
 	return self;
 }
 
