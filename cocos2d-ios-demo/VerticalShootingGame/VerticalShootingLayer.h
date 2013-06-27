@@ -14,8 +14,16 @@
 {
     CCArray *_enemySprites;
     CGPoint _playerVelocity;
+    
     BOOL _isTouchToShoot;
     CCSprite *_bulletSprite;
+    
+    CCLabelTTF *_lifeLabel;
+    CCLabelTTF *_scoreLabel;
+    int     _totalLives;
+    int     _totalScore;
+    
+    CCLabelTTF *_gameEndLabel;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
