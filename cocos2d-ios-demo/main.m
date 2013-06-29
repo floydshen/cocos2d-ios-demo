@@ -6,12 +6,31 @@
 //  Copyright __MyCompanyName__ 2013年. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+//#import <UIKit/UIKit.h>
+//
+//int main(int argc, char *argv[]) {
+//    
+//    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+//    int retVal = UIApplicationMain(argc, argv, nil, @"AppController");
+//    [pool release];
+//    return retVal;
+//}
 
-int main(int argc, char *argv[]) {
+
+#import <UIKit/UIKit.h>
+#import "AppSDelegate.h"
+
+int main(int argc, char *argv[])
+{
+    @try {
+        @autoreleasepool {
+            return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppSDelegate class]));
+        }
+    }
+    @catch (NSException *exception) {
+        
+        
+        @throw exception;
+    }
     
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    int retVal = UIApplicationMain(argc, argv, nil, @"AppController");
-    [pool release];
-    return retVal;
 }

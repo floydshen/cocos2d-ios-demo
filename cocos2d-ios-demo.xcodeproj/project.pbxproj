@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6055BDE2177F1EE500614051 /* SSPullToRefreshDefaultContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055BDDD177F1EE500614051 /* SSPullToRefreshDefaultContentView.m */; };
+		6055BDE3177F1EE500614051 /* SSPullToRefreshSimpleContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055BDDF177F1EE500614051 /* SSPullToRefreshSimpleContentView.m */; };
+		6055BDE4177F1EE500614051 /* SSPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055BDE1177F1EE500614051 /* SSPullToRefreshView.m */; };
+		60751575177ECB8500407083 /* AppSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60751574177ECB8500407083 /* AppSDelegate.m */; };
+		60751578177ECBF500407083 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60751577177ECBF500407083 /* HomeViewController.m */; };
 		609E1B6C17772DF90058A3E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609E1B6B17772DF90058A3E2 /* QuartzCore.framework */; };
 		609E1B6E17772DF90058A3E2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609E1B6D17772DF90058A3E2 /* OpenGLES.framework */; };
 		609E1B7017772DF90058A3E2 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609E1B6F17772DF90058A3E2 /* OpenAL.framework */; };
@@ -152,6 +157,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6055BDDB177F1EE500614051 /* SSPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPullToRefresh.h; sourceTree = "<group>"; };
+		6055BDDC177F1EE500614051 /* SSPullToRefreshDefaultContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPullToRefreshDefaultContentView.h; sourceTree = "<group>"; };
+		6055BDDD177F1EE500614051 /* SSPullToRefreshDefaultContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSPullToRefreshDefaultContentView.m; sourceTree = "<group>"; };
+		6055BDDE177F1EE500614051 /* SSPullToRefreshSimpleContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPullToRefreshSimpleContentView.h; sourceTree = "<group>"; };
+		6055BDDF177F1EE500614051 /* SSPullToRefreshSimpleContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSPullToRefreshSimpleContentView.m; sourceTree = "<group>"; };
+		6055BDE0177F1EE500614051 /* SSPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPullToRefreshView.h; sourceTree = "<group>"; };
+		6055BDE1177F1EE500614051 /* SSPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSPullToRefreshView.m; sourceTree = "<group>"; };
+		60751573177ECB8500407083 /* AppSDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSDelegate.h; sourceTree = "<group>"; };
+		60751574177ECB8500407083 /* AppSDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSDelegate.m; sourceTree = "<group>"; };
+		60751576177ECBF500407083 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = DoubanReader/HomeViewController.h; sourceTree = "<group>"; };
+		60751577177ECBF500407083 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = DoubanReader/HomeViewController.m; sourceTree = "<group>"; };
 		609E1B6817772DF90058A3E2 /* cocos2d-ios-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cocos2d-ios-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		609E1B6B17772DF90058A3E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		609E1B6D17772DF90058A3E2 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -453,6 +469,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6055BDDA177F1EE500614051 /* SSPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				6055BDDB177F1EE500614051 /* SSPullToRefresh.h */,
+				6055BDDC177F1EE500614051 /* SSPullToRefreshDefaultContentView.h */,
+				6055BDDD177F1EE500614051 /* SSPullToRefreshDefaultContentView.m */,
+				6055BDDE177F1EE500614051 /* SSPullToRefreshSimpleContentView.h */,
+				6055BDDF177F1EE500614051 /* SSPullToRefreshSimpleContentView.m */,
+				6055BDE0177F1EE500614051 /* SSPullToRefreshView.h */,
+				6055BDE1177F1EE500614051 /* SSPullToRefreshView.m */,
+			);
+			name = SSPullToRefresh;
+			path = DoubanReader/SSPullToRefresh;
+			sourceTree = "<group>";
+		};
+		6075156E177ECAC300407083 /* DoubanReader */ = {
+			isa = PBXGroup;
+			children = (
+				6055BDDA177F1EE500614051 /* SSPullToRefresh */,
+				60751579177ECC5C00407083 /* Common */,
+				60751576177ECBF500407083 /* HomeViewController.h */,
+				60751577177ECBF500407083 /* HomeViewController.m */,
+			);
+			name = DoubanReader;
+			sourceTree = "<group>";
+		};
+		60751579177ECC5C00407083 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
 		609E1B5F17772DF90058A3E2 = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +538,7 @@
 		609E1B7D17772DF90058A3E2 /* cocos2d-ios-demo */ = {
 			isa = PBXGroup;
 			children = (
+				6075156E177ECAC300407083 /* DoubanReader */,
 				609E1D0417772FAF0058A3E2 /* VerticalShootingGame */,
 				609E1CF517772DFD0058A3E2 /* AppDelegate.h */,
 				609E1CF617772DFD0058A3E2 /* AppDelegate.m */,
@@ -496,6 +546,8 @@
 				609E1CF917772DFD0058A3E2 /* HelloWorldLayer.m */,
 				609E1CFB17772DFD0058A3E2 /* IntroLayer.h */,
 				609E1CFC17772DFD0058A3E2 /* IntroLayer.m */,
+				60751573177ECB8500407083 /* AppSDelegate.h */,
+				60751574177ECB8500407083 /* AppSDelegate.m */,
 				609E1B7E17772DF90058A3E2 /* Resources */,
 				609E1B9817772DFA0058A3E2 /* libs */,
 				609E1CF117772DFD0058A3E2 /* Supporting Files */,
@@ -1100,6 +1152,11 @@
 				609E1CFA17772DFD0058A3E2 /* HelloWorldLayer.m in Sources */,
 				609E1CFD17772DFD0058A3E2 /* IntroLayer.m in Sources */,
 				609E1D0717772FAF0058A3E2 /* VerticalShootingLayer.m in Sources */,
+				60751575177ECB8500407083 /* AppSDelegate.m in Sources */,
+				60751578177ECBF500407083 /* HomeViewController.m in Sources */,
+				6055BDE2177F1EE500614051 /* SSPullToRefreshDefaultContentView.m in Sources */,
+				6055BDE3177F1EE500614051 /* SSPullToRefreshSimpleContentView.m in Sources */,
+				6055BDE4177F1EE500614051 /* SSPullToRefreshView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1203,6 +1260,7 @@
 				609E1D0217772DFD0058A3E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

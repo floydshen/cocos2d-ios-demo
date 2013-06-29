@@ -1,0 +1,90 @@
+//
+//  HomeViewController.m
+//  cocos2d-ios-demo
+//
+//  Created by floyd on 13-6-29.
+//
+//
+
+#import "HomeViewController.h"
+
+@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, SSPullToRefreshViewDelegate>
+
+
+
+@end
+
+@implementation HomeViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+    
+    self.tableview = [[UITableView alloc] init];
+    
+    CGRect frame = self.view.frame;
+    frame.origin.y = 50;
+    frame.size.height = frame.size.height - 100;
+    
+    self.tableview.frame = frame;
+    self.tableview.dataSource = self;
+    self.tableview.delegate = self;
+    
+    self.refreshView = [[SSPullToRefreshView alloc] initWithScrollView:self.tableview delegate:self];
+    self.refreshView.contentView = [[SSPullToRefreshSimpleContentView alloc] initWithFrame:CGRectMake(0, 0, 320, 40) refreshFlg:YES];
+    self.refreshView.expandedHeight = 40;
+    [self.tableview addSubview:self.refreshView];
+
+    [self.view addSubview:self.tableview];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 50;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *loadIdentifier = @"LoadCell";
+    UITableViewCell *cell;
+    cell = [tableView dequeueReusableCellWithIdentifier:loadIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        cell.frame = CGRectMake(0, 0, 320, 40);
+    }
+    
+    NSInteger row = [indexPath row];
+    cell.textLabel.text = [[NSString alloc] initWithFormat:@"==========%d", row] ;
+    
+    return cell;
+}
+
+#pragma mark - SSPullToRefreshViewDelegate
+- (void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view {
+    
+    NSLog(@"-pullToRefreshViewDidStartLoading-");
+    
+    
+}
+
+
+@end
