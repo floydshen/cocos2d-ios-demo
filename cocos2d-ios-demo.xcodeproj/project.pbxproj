@@ -14,6 +14,7 @@
 		606136FF178060B1008B683A /* UINavigationBar+CustomHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 606136FE178060B1008B683A /* UINavigationBar+CustomHeight.m */; };
 		60751575177ECB8500407083 /* AppSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60751574177ECB8500407083 /* AppSDelegate.m */; };
 		60751578177ECBF500407083 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60751577177ECBF500407083 /* HomeViewController.m */; };
+		6080FC5F1780916C008024DB /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6080FC5E1780916C008024DB /* ListViewController.m */; };
 		609E1B6C17772DF90058A3E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609E1B6B17772DF90058A3E2 /* QuartzCore.framework */; };
 		609E1B6E17772DF90058A3E2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609E1B6D17772DF90058A3E2 /* OpenGLES.framework */; };
 		609E1B7017772DF90058A3E2 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609E1B6F17772DF90058A3E2 /* OpenAL.framework */; };
@@ -174,6 +175,8 @@
 		60751574177ECB8500407083 /* AppSDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSDelegate.m; sourceTree = "<group>"; };
 		60751576177ECBF500407083 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = DoubanReader/HomeViewController.h; sourceTree = "<group>"; };
 		60751577177ECBF500407083 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = DoubanReader/HomeViewController.m; sourceTree = "<group>"; };
+		6080FC5D1780916C008024DB /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewController.h; path = DoubanReader/ListViewController.h; sourceTree = "<group>"; };
+		6080FC5E1780916C008024DB /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListViewController.m; path = DoubanReader/ListViewController.m; sourceTree = "<group>"; };
 		609E1B6817772DF90058A3E2 /* cocos2d-ios-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cocos2d-ios-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		609E1B6B17772DF90058A3E2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		609E1B6D17772DF90058A3E2 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -497,6 +500,8 @@
 				60751579177ECC5C00407083 /* Common */,
 				60751576177ECBF500407083 /* HomeViewController.h */,
 				60751577177ECBF500407083 /* HomeViewController.m */,
+				6080FC5D1780916C008024DB /* ListViewController.h */,
+				6080FC5E1780916C008024DB /* ListViewController.m */,
 			);
 			name = DoubanReader;
 			sourceTree = "<group>";
@@ -1169,6 +1174,7 @@
 				6055BDE4177F1EE500614051 /* SSPullToRefreshView.m in Sources */,
 				6055BDE7177F278D00614051 /* SearchNavigationController.m in Sources */,
 				606136FF178060B1008B683A /* UINavigationBar+CustomHeight.m in Sources */,
+				6080FC5F1780916C008024DB /* ListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

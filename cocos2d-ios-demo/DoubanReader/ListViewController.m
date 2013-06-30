@@ -1,23 +1,19 @@
 //
-//  HomeViewController.m
+//  ListViewController.m
 //  cocos2d-ios-demo
 //
-//  Created by floyd on 13-6-29.
+//  Created by floyd on 13-7-1.
 //
 //
 
-#import "HomeViewController.h"
-#import "SearchNavigationController.h"
 #import "ListViewController.h"
+#import "SearchNavigationController.h"
 
-@interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, SSPullToRefreshViewDelegate>
-
-
+@interface ListViewController ()<UITableViewDataSource, UITableViewDelegate, SSPullToRefreshViewDelegate>
 @property(nonatomic, assign) UIView *rtContentView;
-
 @end
 
-@implementation HomeViewController
+@implementation ListViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    DLog(@"homeview didload");
+    DLog(@"list didload");
     SearchNavigationController *snc = (SearchNavigationController *)self.navigationController;
     self.rtContentView = snc.rtContentView;
 	// Do any additional setup after loading the view.
@@ -79,14 +75,14 @@
     }
     
     NSInteger row = [indexPath row];
-    cell.textLabel.text = [[NSString alloc] initWithFormat:@"==========%d", row] ;
+    cell.textLabel.text = [[NSString alloc] initWithFormat:@"!!!======%d", row] ;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    ListViewController *view = [[ListViewController alloc] init];
-    [self.navigationController pushViewController:view animated:YES];
+//    ListViewController *view = [[ListViewController alloc] init];
+//    [self.navigationController pushViewController:view animated:YES];
 }
 
 #pragma mark - SSPullToRefreshViewDelegate
@@ -96,6 +92,5 @@
     [self.navigationController showSearchViewController:self.view animated:YES];
     
 }
-
 
 @end
