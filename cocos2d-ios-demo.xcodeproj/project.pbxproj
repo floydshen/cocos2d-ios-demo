@@ -10,6 +10,8 @@
 		6055BDE2177F1EE500614051 /* SSPullToRefreshDefaultContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055BDDD177F1EE500614051 /* SSPullToRefreshDefaultContentView.m */; };
 		6055BDE3177F1EE500614051 /* SSPullToRefreshSimpleContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055BDDF177F1EE500614051 /* SSPullToRefreshSimpleContentView.m */; };
 		6055BDE4177F1EE500614051 /* SSPullToRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055BDE1177F1EE500614051 /* SSPullToRefreshView.m */; };
+		6055BDE7177F278D00614051 /* SearchNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6055BDE6177F278D00614051 /* SearchNavigationController.m */; };
+		606136FF178060B1008B683A /* UINavigationBar+CustomHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 606136FE178060B1008B683A /* UINavigationBar+CustomHeight.m */; };
 		60751575177ECB8500407083 /* AppSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 60751574177ECB8500407083 /* AppSDelegate.m */; };
 		60751578177ECBF500407083 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60751577177ECBF500407083 /* HomeViewController.m */; };
 		609E1B6C17772DF90058A3E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609E1B6B17772DF90058A3E2 /* QuartzCore.framework */; };
@@ -164,6 +166,10 @@
 		6055BDDF177F1EE500614051 /* SSPullToRefreshSimpleContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSPullToRefreshSimpleContentView.m; sourceTree = "<group>"; };
 		6055BDE0177F1EE500614051 /* SSPullToRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSPullToRefreshView.h; sourceTree = "<group>"; };
 		6055BDE1177F1EE500614051 /* SSPullToRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSPullToRefreshView.m; sourceTree = "<group>"; };
+		6055BDE5177F278D00614051 /* SearchNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchNavigationController.h; path = DoubanReader/SearchNavigationController.h; sourceTree = "<group>"; };
+		6055BDE6177F278D00614051 /* SearchNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchNavigationController.m; path = DoubanReader/SearchNavigationController.m; sourceTree = "<group>"; };
+		606136FD178060B1008B683A /* UINavigationBar+CustomHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+CustomHeight.h"; path = "DoubanReader/UINavigationBar+CustomHeight.h"; sourceTree = "<group>"; };
+		606136FE178060B1008B683A /* UINavigationBar+CustomHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+CustomHeight.m"; path = "DoubanReader/UINavigationBar+CustomHeight.m"; sourceTree = "<group>"; };
 		60751573177ECB8500407083 /* AppSDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSDelegate.h; sourceTree = "<group>"; };
 		60751574177ECB8500407083 /* AppSDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSDelegate.m; sourceTree = "<group>"; };
 		60751576177ECBF500407083 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = DoubanReader/HomeViewController.h; sourceTree = "<group>"; };
@@ -498,6 +504,10 @@
 		60751579177ECC5C00407083 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6055BDE5177F278D00614051 /* SearchNavigationController.h */,
+				6055BDE6177F278D00614051 /* SearchNavigationController.m */,
+				606136FD178060B1008B683A /* UINavigationBar+CustomHeight.h */,
+				606136FE178060B1008B683A /* UINavigationBar+CustomHeight.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -1157,6 +1167,8 @@
 				6055BDE2177F1EE500614051 /* SSPullToRefreshDefaultContentView.m in Sources */,
 				6055BDE3177F1EE500614051 /* SSPullToRefreshSimpleContentView.m in Sources */,
 				6055BDE4177F1EE500614051 /* SSPullToRefreshView.m in Sources */,
+				6055BDE7177F278D00614051 /* SearchNavigationController.m in Sources */,
+				606136FF178060B1008B683A /* UINavigationBar+CustomHeight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

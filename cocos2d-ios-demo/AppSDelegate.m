@@ -8,6 +8,7 @@
 
 #import "AppSDelegate.h"
 #import "HomeViewController.h"
+#import "SearchNavigationController.h"
 
 @implementation AppSDelegate
 
@@ -19,33 +20,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
-//    SYFIndexViewController *ivc = [[[SYFIndexViewController alloc]init] autorelease];
-//    UINavigationController *indexNavController = [[[UINavigationController alloc] initWithRootViewController:ivc]autorelease];
-//    
-//    SYFMapViewController *mvc = [[[SYFMapViewController alloc]init] autorelease];
-//    UINavigationController *mapNavController = [[[UINavigationController alloc] initWithRootViewController:mvc] autorelease];
-//    
-//    self.tabBarController = [[[UITabBarController alloc] init] autorelease];
-//    
-//    UITabBarItem *indexItem = [[[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemHistory tag:0] autorelease];
-//    UITabBarItem *mapItem = [[[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemSearch tag:0] autorelease];
-//    
-//    indexNavController.tabBarItem = indexItem;
-//    mapNavController.tabBarItem = mapItem;
-//    
-//    self.tabBarController.viewControllers = @[indexNavController, mapNavController];
-//    self.tabBarController.delegate = self;
+    CGRect windowRect = [[UIScreen mainScreen] bounds];
+    windowRect.size.height = windowRect.size.height + 50;
+//    self.window.frame = windowRect;
+    self.window = [[[UIWindow alloc] initWithFrame:windowRect] autorelease];
     
+    HomeViewController *homeController = [[[HomeViewController alloc] init] autorelease];
     
-    HomeViewController *homeController = [[HomeViewController alloc] init];
-    
-    self.window.rootViewController = homeController;
+    SearchNavigationController *indexNavController = [[[SearchNavigationController alloc] initWithRootViewController:homeController]autorelease];
+
+    self.window.rootViewController = indexNavController;
     
     //    self.navigationController = [[[UINavigationController alloc] initWithRootViewController:ivc] autorelease];
     //    self.window.rootViewController = self.navigationController;
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor redColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

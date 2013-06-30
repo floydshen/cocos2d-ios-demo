@@ -7,10 +7,12 @@
 //
 
 #import "HomeViewController.h"
+#import "SearchNavigationController.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, SSPullToRefreshViewDelegate>
 
 
+@property(nonatomic, assign) UIView *rtContentView;
 
 @end
 
@@ -28,13 +30,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    DLog(@"homeview didload");
+    SearchNavigationController *snc = (SearchNavigationController *)self.navigationController;
+    self.rtContentView = snc.rtContentView;
 	// Do any additional setup after loading the view.
     
     self.tableview = [[UITableView alloc] init];
     
-    CGRect frame = self.view.frame;
-    frame.origin.y = 50;
-    frame.size.height = frame.size.height - 100;
+    CGRect frame = self.rtContentView.frame;
+    frame.origin.y = 0;
+    frame.size.height = frame.size.height;
     
     self.tableview.frame = frame;
     self.tableview.dataSource = self;
@@ -44,8 +49,8 @@
     self.refreshView.contentView = [[SSPullToRefreshSimpleContentView alloc] initWithFrame:CGRectMake(0, 0, 320, 40) refreshFlg:YES];
     self.refreshView.expandedHeight = 40;
     [self.tableview addSubview:self.refreshView];
-
-    [self.view addSubview:self.tableview];
+    
+    [self.rtContentView addSubview:self.tableview];
 }
 
 - (void)didReceiveMemoryWarning
@@ -80,9 +85,9 @@
 
 #pragma mark - SSPullToRefreshViewDelegate
 - (void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view {
-    
     NSLog(@"-pullToRefreshViewDidStartLoading-");
     
+    [self.navigationController showSearchViewController:self.view animated:YES];
     
 }
 
