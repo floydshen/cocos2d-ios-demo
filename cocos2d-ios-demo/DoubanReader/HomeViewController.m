@@ -37,21 +37,22 @@
 	// Do any additional setup after loading the view.
     
     self.tableview = [[UITableView alloc] init];
-    
     CGRect frame = self.rtContentView.frame;
     frame.origin.y = 0;
-    frame.size.height = frame.size.height;
-    
+    frame.size.height = frame.size.height - 100;
     self.tableview.frame = frame;
     self.tableview.dataSource = self;
     self.tableview.delegate = self;
-    
     self.refreshView = [[SSPullToRefreshView alloc] initWithScrollView:self.tableview delegate:self];
     self.refreshView.contentView = [[SSPullToRefreshSimpleContentView alloc] initWithFrame:CGRectMake(0, 0, 320, 40) refreshFlg:YES];
     self.refreshView.expandedHeight = 40;
     [self.tableview addSubview:self.refreshView];
-    
     [self.rtContentView addSubview:self.tableview];
+    
+    UIView *toolsView = [[UIView alloc] init];
+    toolsView.frame = CGRectMake(0, frame.origin.y + frame.size.height, frame.size.width, 100);
+    [toolsView setBackgroundColor:[UIColor grayColor]];
+    [self.rtContentView addSubview:toolsView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,7 +70,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *loadIdentifier = @"LoadCell";
+    NSString *loadIdentifier = @"LoadCell1";
     UITableViewCell *cell;
     cell = [tableView dequeueReusableCellWithIdentifier:loadIdentifier];
     
