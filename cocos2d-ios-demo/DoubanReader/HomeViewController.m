@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "SearchNavigationController.h"
 #import "ListViewController.h"
+#import "UserCell.h"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate, SSPullToRefreshViewDelegate>
 
@@ -75,7 +76,7 @@
     cell = [tableView dequeueReusableCellWithIdentifier:loadIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        cell = [[UserCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         cell.frame = CGRectMake(0, 0, 320, 40);
     }
     
@@ -94,7 +95,7 @@
 - (void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view {
     NSLog(@"-pullToRefreshViewDidStartLoading-");
     
-    [self.navigationController showSearchViewController:self.view animated:YES];
+//    [self.navigationController showSearchViewController:self.view animated:YES];
     
 }
 

@@ -157,6 +157,7 @@
 		609E1D25177730540058A3E2 /* hero_2-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 609E1D16177730540058A3E2 /* hero_2-hd.png */; };
 		609E1D26177730540058A3E2 /* hero_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 609E1D17177730540058A3E2 /* hero_2.png */; };
 		609E1D27177730540058A3E2 /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 609E1D18177730540058A3E2 /* icon.jpg */; };
+		60F59DEF179253C600E06CAA /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60F59DEE179253C600E06CAA /* UserCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -456,6 +457,8 @@
 		609E1D16177730540058A3E2 /* hero_2-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hero_2-hd.png"; sourceTree = "<group>"; };
 		609E1D17177730540058A3E2 /* hero_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero_2.png; sourceTree = "<group>"; };
 		609E1D18177730540058A3E2 /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon.jpg; sourceTree = "<group>"; };
+		60F59DED179253C600E06CAA /* UserCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserCell.h; path = DoubanReader/UserCell.h; sourceTree = "<group>"; };
+		60F59DEE179253C600E06CAA /* UserCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserCell.m; path = DoubanReader/UserCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -496,6 +499,7 @@
 		6075156E177ECAC300407083 /* DoubanReader */ = {
 			isa = PBXGroup;
 			children = (
+				60F59DEC1792539100E06CAA /* Views */,
 				6055BDDA177F1EE500614051 /* SSPullToRefresh */,
 				60751579177ECC5C00407083 /* Common */,
 				60751576177ECBF500407083 /* HomeViewController.h */,
@@ -974,6 +978,15 @@
 			path = arts;
 			sourceTree = "<group>";
 		};
+		60F59DEC1792539100E06CAA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				60F59DED179253C600E06CAA /* UserCell.h */,
+				60F59DEE179253C600E06CAA /* UserCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1175,6 +1188,7 @@
 				6055BDE7177F278D00614051 /* SearchNavigationController.m in Sources */,
 				606136FF178060B1008B683A /* UINavigationBar+CustomHeight.m in Sources */,
 				6080FC5F1780916C008024DB /* ListViewController.m in Sources */,
+				60F59DEF179253C600E06CAA /* UserCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

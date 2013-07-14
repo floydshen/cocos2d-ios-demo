@@ -90,6 +90,10 @@
 //    [self.navigationController pushViewController:view animated:YES];
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
 #pragma mark - SSPullToRefreshViewDelegate
 - (void)pullToRefreshViewDidStartLoading:(SSPullToRefreshView *)view {
     NSLog(@"-pullToRefreshViewDidStartLoading-");
